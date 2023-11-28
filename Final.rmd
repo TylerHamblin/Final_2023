@@ -39,7 +39,7 @@ $H_A$ : The data for the preventative vaccine does have statistical significance
 
 
 # Methods
-
+According to the data set this is going to be a categorical situation explained by another categorical variable. After creating separate data sets for each of the sub populations we will use the CandP helper files to graphically display bar charts, pull xtabs commands for numerical data, run Chi-Squared for inferential data, and end with Fisher code to declare a confidence interval. Since we are limiting this investigation to two types of data there are no loops required to measure multiple variables. 
 
 # Results
 
