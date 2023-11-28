@@ -96,12 +96,18 @@ barchartGC(~infected + treatment,data=female)
 barchartGC(~infected + treatment,data=female, type="percent")
 ```
 
+
+This barchart solely depicts the graphical results for all the females within this data set. Again the comparison shows the contraction of Covid-19 based on vaccination status. The left is for those that have contracted the virus and the right is for those that have not. The placebo has about one third more Covid-19 positive females compared to the vaccinated women on that side. 
+
 ### Numerical Results
 ```{r}
 tableFemale <- xtabs(~infected + treatment, data=female)
 rowPerc(tableFemale)
 colPerc(tableFemale)
 ```
+
+
+These numerical results again confirm the suggestion of the graphical data that more people get Covid-19 who have only recieved the placebo treatment. Approximately 60% of the time the unvaccinated people were infected where as only 40% of the time the vaccinated people tested positive. The vaccine is still generally affective for the female sub group but slightly less than the male category. 
 
 ### Inferential Results
 ```{r}
@@ -112,6 +118,8 @@ femaleFisher
 ```
 
 
+From the Chi-Squared test, we get a p-value of $2.732\times10^{-4}$ that is below the 0.05 limit showing there is statistical significance. The Chi-Squared statistic is 13, also higher than the degrees of freedom for this instance. An unvaccinated female will get Covid-19 1.5 times more than a woman who did receive the vaccine.
+
 ### Confidence Interval
 ```{r}
 oddsFemale = femaleFisher$estimate/(femaleFisher$estimate +1)*100
@@ -120,6 +128,9 @@ femaleLow=(femaleFisher$conf.int[1]/(femaleFisher$conf.int[1]+1))*100
 femaleHigh=(femaleFisher$conf.int[2]/(femaleFisher$conf.int[2]+1))*100
 cat("\n","Condifence interval for Females: ",femaleLow," to ",femaleHigh)
 ```
+
+
+Once again there is a >50% confidence interval, lower than the >60% suggestion, so the vaccination is still advisable for preventing infection for females. 
 
 ## LGBTQ
 
