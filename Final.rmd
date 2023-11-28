@@ -46,7 +46,10 @@ According to the data set this is going to be a categorical situation explained 
 ## Males
 
 ### Graphical Results
-
+```{r}
+barchartGC(~infected + treatment,data=male)
+barchartGC(~infected + treatment,data=male, type="percent")
+```
 
 ### Numerical Results
 
@@ -60,7 +63,10 @@ According to the data set this is going to be a categorical situation explained 
 ## Females
 
 ### Graphical Results
-
+```{r}
+barchartGC(~infected + treatment,data=female)
+barchartGC(~infected + treatment,data=female, type="percent")
+```
 
 ### Numerical Results
 
@@ -74,7 +80,10 @@ According to the data set this is going to be a categorical situation explained 
 ## LGBTQ
 
 ### Graphical Results
-
+```{r}
+barchartGC(~infected + treatment,data=lgbtq)
+barchartGC(~infected + treatment,data=lgbtq, type="percent")
+```
 
 ### Numerical Results
 
@@ -88,7 +97,10 @@ According to the data set this is going to be a categorical situation explained 
 ## Druggies
 
 ### Graphical Results
-
+```{r}
+barchartGC(~infected + treatment,data=drugUser)
+barchartGC(~infected + treatment,data=drugUser, type="percent")
+```
 
 ### Numerical Results
 
