@@ -52,7 +52,11 @@ barchartGC(~infected + treatment,data=male, type="percent")
 ```
 
 ### Numerical Results
-
+```{r}
+tableMale <- xtabs(~infected + treatment, data=male)
+rowPerc(tableMale)
+colPerc(tableMale)
+```
 
 ### Inferential Results
 
@@ -69,7 +73,11 @@ barchartGC(~infected + treatment,data=female, type="percent")
 ```
 
 ### Numerical Results
-
+```{r}
+tableFemale <- xtabs(~infected + treatment, data=female)
+rowPerc(tableFemale)
+colPerc(tableFemale)
+```
 
 ### Inferential Results
 
@@ -86,7 +94,11 @@ barchartGC(~infected + treatment,data=lgbtq, type="percent")
 ```
 
 ### Numerical Results
-
+```{r}
+tableLGBTQ <- xtabs(~infected + treatment, data=lgbtq)
+rowPerc(tableLGBTQ)
+colPerc(tableLGBTQ)
+```
 
 ### Inferential Results
 
@@ -103,7 +115,11 @@ barchartGC(~infected + treatment,data=drugUser, type="percent")
 ```
 
 ### Numerical Results
-
+```{r}
+tableDrug <- xtabs(~infected + treatment, data=drugUser)
+rowPerc(tableDrug)
+colPerc(tableDrug)
+```
 
 ### Inferential Results
 
