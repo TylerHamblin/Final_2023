@@ -51,12 +51,18 @@ barchartGC(~infected + treatment,data=male)
 barchartGC(~infected + treatment,data=male, type="percent")
 ```
 
+
+The above barchart compares the graphical results for only the male sub group from the data set. It displays the rates of contracting Covid-19 explained by whether or not the individual was vaccinated. The left side of the chart accounts for those with positive test results and the right shows people who did not contract it. More than twice the amount of people in the Covid-19 category only had the placebo, suggesting that the vaccine does have efficacy for this group. 
+
 ### Numerical Results
 ```{r}
 tableMale <- xtabs(~infected + treatment, data=male)
 rowPerc(tableMale)
 colPerc(tableMale)
 ```
+
+
+These numerical results confirm the suggestions from the barchart that people who have the vaccine tend to contract Covid-19 half as much as the people who only received the placebo. The placebo got it about 70% of the time and the vaccinated group got it 30%. Again our assumption is that the vaccination is effective for males. 
 
 ### Inferential Results
 ```{r}
@@ -66,6 +72,10 @@ maleFisher <- fisher.test(tableMale)
 maleFisher
 ```
 
+
+
+The Chi Squared test produces a p-value that is significantly smaller than the suggested 0.05 limit. Coming in at $1.098\times10^{-13}$ , there is even greater evidence that a statistical significance is responsible for the data. The Chi-squared statistic is 55 which comes in larger than the degrees of freedom for this data. The chance of an unvaccinated male getting Covid-19 are 2.2 times higher than a male with the vaccine. 
+
 ### Confidence Interval
 ```{r}
 oddsMale = maleFisher$estimate/(maleFisher$estimate+1)*100
@@ -74,6 +84,9 @@ maleLow=(maleFisher$conf.int[1]/(maleFisher$conf.int[1]+1))*100
 maleHigh=(maleFisher$conf.int[2]/(maleFisher$conf.int[2]+1))*100
 cat("\n","Condifence interval for Males: ",maleLow," to ",maleHigh)
 ```
+
+
+The confidence interval for this data set is >50% which meets the typical vaccine threshold of >60%. This is enough data to confidently say that the vaccine is a good option for preventing the contraction of Covid-19 for males. 
 
 ## Females
 
