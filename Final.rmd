@@ -223,8 +223,12 @@ The confidence interval for drug users is only 5-22% which is much lower than th
 
 # Overall Results and Conclusions
 
+$H_0$ : The data for the preventative vaccine has no statistical significance to changing infection rate across the listed sub populations. 
 
 
+$H_A$ : The data for the preventative vaccine does have statistical significance in how it prevents infection for each sub group. 
 
+
+Based on the total results from every category we can confidently say that there is statistical significance within this data set that allows us to draw meaningful conclusions. We can confirm the alternative hypothesis, $H_A$, and reject the null one, $H_0$, concluding that there was statistical evidence of how the vaccine affected the infection rate of Covid-19. An important thing to note is that it did not have the same results in efficacy for Male, Female, Drug Users, and LGBTQ participants. For both Male and Female it had a nearly identical effect in which a person was almost twice as likely to get Covid-19 if they were in the placebo treatment group. In contrast to this, the Druggies and LGBTQ members had adverse reactions to the vaccine in which they were 8 and 5 times more likely to get COVID-19 if they were vaccinated against it. For an unknown reason that would require further statistical tests with more data, the people in these two sub categories became more prone to the virus after receiving injections to prevent it. Regardless of this, it can still be concluded that there is statistical significance between the vaccine and the infection rate of Covid-19 that notably varies from sub group to sub group. For Men and Women it would be advisable for a patient wishing to remain healthy to take the vaccine and for Druggies and LGBTQ it would be smarter for them to abstain. 
 
 
