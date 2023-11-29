@@ -218,7 +218,7 @@ cat("\n","Condifence interval for Drug Users: ",drugLow," to ",drugHigh)
 ```
 
 
-The confidence interval for drug users is only 5-22% which is much lower than the >50% recommendation so this should not be implemented as a reliable precaution for the spread of Covid-19 amongst drug users. 
+The confidence interval for drug users is only 5-22% which is much lower than the >50% recommendation so this should not be implemented as a reliable precaution for the spread of Covid-19 amongst drug users. Drug users having the vaccine makes them even more prone to Covid-19 than it did for the LGBTQ sub group. 
 
 
 # Overall Results and Conclusions
