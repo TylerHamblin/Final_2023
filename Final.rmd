@@ -140,6 +140,8 @@ barchartGC(~infected + treatment,data=lgbtq)
 barchartGC(~infected + treatment,data=lgbtq, type="percent")
 ```
 
+Above the barchart compares the relationship of the placebo and vaccine categories for people only from the LGBTQ category. In response to how many more people get Covid-19 it appears that the vaccine makes you about 5 times more likely as prone to it. The left side of the graph shows those that do have Covid-19 with the right side showing the data for those testing negative. 
+
 
 ### Numerical Results
 ```{r}
@@ -148,7 +150,7 @@ rowPerc(tableLGBTQ)
 colPerc(tableLGBTQ)
 ```
 
-
+The numerical results are a reflection of the graphical data that show only about 15% of the Covid-19 positive people had the placebo treatment and instead about 85% of them were vaccinated. This is the first instance where the vaccine is not effective and most likely worsens a patients chance at avoiding the disease. For an unknown reason being apart of the LGBTQ group reverses the success rates of this treatment method. 
 
 ### Inferential Results
 ```{r}
@@ -159,6 +161,7 @@ lgbtqFisher
 ```
 
 
+The p-value of $6.668\times10^{-8}$ comes in well under the suggested 0.05 threshold, showing that this reverse effect of the vaccine is not a fluke. The Chi-Squared statistic, 29, supports this as it is larger than the degrees of freedom. The odds for an unvaccinated LGBTQ person getting Covid-19 compared to a vaccinated one are about 1:5. 
 
 ### Confidence Interval
 ```{r}
@@ -169,6 +172,7 @@ lgbtqHigh=(lgbtqFisher$conf.int[2]/(lgbtqFisher$conf.int[2]+1))*100
 cat("\n","Condifence interval for LGBTQ: ",lgbtqLow," to ",lgbtqHigh)
 ```
 
+The Confidence interval for LGBTQ members is only about 8%-27% which is far lower than the >50% minimum so this vaccine does not serve the purpose of limiting infection rate for Covid-19 for this sub group. 
 
 ## Druggies
 
