@@ -140,7 +140,6 @@ barchartGC(~infected + treatment,data=lgbtq)
 barchartGC(~infected + treatment,data=lgbtq, type="percent")
 ```
 
-The barchart above now shows the graphical results for all people identified on drugs and how they contract Covid-19 based on whether or not they have the vaccine. Left shows positive right shows negative. In this instance it was four or five times more likely that a person who had Covid-19 had also received the vaccine rather than the placebo. This could suggest that drug users are already much more pre disposed to contracting Covid-19 because of weakened immune systems or because of a reverse affect the vaccination has with the drugs in a persons system. This would require a separate study. 
 
 ### Numerical Results
 ```{r}
@@ -150,7 +149,6 @@ colPerc(tableLGBTQ)
 ```
 
 
-According to the numerical results the placebo group accounted for 15% of the people who contracted Covid-19 and the vaccinated people accounted for the other 85%. This confirms the notion from the barchart that with drug users, as opposed to males and females, the vaccine actually increases how often they get Covid-19. The vaccine so far is not effective or advisable. 
 
 ### Inferential Results
 ```{r}
@@ -161,7 +159,6 @@ lgbtqFisher
 ```
 
 
-The p-value of $6.668\times10^{-8}$ still suggests a statistical difference within the data so the reverse in effectiveness is not mere chance. The Chi-Squared statistic is 29 still larger than the degrees of freedom. The odds of a placebo treated versus vaccinated drug user contracting the virus is about 1:5. 
 
 ### Confidence Interval
 ```{r}
@@ -172,7 +169,6 @@ lgbtqHigh=(lgbtqFisher$conf.int[2]/(lgbtqFisher$conf.int[2]+1))*100
 cat("\n","Condifence interval for LGBTQ: ",lgbtqLow," to ",lgbtqHigh)
 ```
 
-The confidence interval for drug users is only 7-26% which is much lower than the >50% recommendation so this should not be implemented as a reliable precaution for the spread of Covid-19 amongst drug users. 
 
 ## Druggies
 
@@ -182,12 +178,18 @@ barchartGC(~infected + treatment,data=drugUser)
 barchartGC(~infected + treatment,data=drugUser, type="percent")
 ```
 
+The barchart above now shows the graphical results for all people identified on drugs and how they contract Covid-19 based on whether or not they have the vaccine. Left shows positive right shows negative. In this instance it was five or six times more likely that a person who had Covid-19 had also received the vaccine rather than the placebo. This could suggest that drug users are already much more pre disposed to contracting Covid-19 because of weakened immune systems or because of a reverse affect the vaccination has with the drugs in a persons system. This would require a separate study. 
+
+
 ### Numerical Results
 ```{r}
 tableDrug <- xtabs(~infected + treatment, data=drugUser)
 rowPerc(tableDrug)
 colPerc(tableDrug)
 ```
+
+According to the numerical results the placebo group accounted for 12% of the people who contracted Covid-19 and the vaccinated people accounted for the other 88%. This confirms the notion from the barchart that with drug users, as opposed to males and females, the vaccine actually increases how often they get Covid-19. The vaccine so far is not effective or advisable. 
+
 
 ### Inferential Results
 ```{r}
@@ -197,6 +199,11 @@ drugFisher <- fisher.test(tableDrug)
 drugFisher
 ```
 
+
+The p-value of $2.842\times10^{-9}$ still suggests a statistical difference within the data so the reverse in effectiveness is not mere chance. The Chi-Squared statistic is 35 still larger than the degrees of freedom. The odds of a placebo treated versus vaccinated drug user contracting the virus is about 1:8. 
+
+
+
 ### Confidence Interval
 ```{r}
 oddsDrug = drugFisher$estimate/(drugFisher$estimate +1)*100
@@ -205,6 +212,9 @@ drugLow=(drugFisher$conf.int[1]/(drugFisher$conf.int[1]+1))*100
 drugHigh=(drugFisher$conf.int[2]/(drugFisher$conf.int[2]+1))*100
 cat("\n","Condifence interval for Drug Users: ",drugLow," to ",drugHigh)
 ```
+
+
+The confidence interval for drug users is only 5-22% which is much lower than the >50% recommendation so this should not be implemented as a reliable precaution for the spread of Covid-19 amongst drug users. 
 
 
 # Overall Results and Conclusions
